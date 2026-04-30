@@ -57,7 +57,7 @@ export default function Footer() {
               </h1>
               <div className="text-right">
                 <p className="text-white text-sm sm:text-base">{new Date().getFullYear()} FitHome</p>
-                <p className="text-neutral-400 text-xs mt-1">Разработано Малютой Григорием и Кузнецовым Игорем</p>
+                <p className="text-neutral-400 text-xs mt-1">Составил: Кузнецов И.Д. и Малюта Г.</p>
               </div>
             </div>
           </div>
