@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Featured() {
   return (
     <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-white">
@@ -13,9 +15,12 @@ export default function Featured() {
         <p className="text-2xl lg:text-4xl mb-8 text-neutral-900 leading-tight">
           Не нужен зал и дорогой абонемент — достаточно 20 минут в день. Программы адаптированы под твой ритм, уровень и цели.
         </p>
-        <button className="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide">
-          Попробовать
-        </button>
+        <Link
+          to="/workouts"
+          className="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black w-fit uppercase tracking-wide"
+        >
+          Смотреть программы
+        </Link>
       </div>
     </div>
   );

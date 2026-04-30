@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const benefits = [
@@ -28,8 +29,8 @@ const benefits = [
   },
   {
     icon: "Users",
-    title: "Сообщество",
-    desc: "Тысячи людей, которые тренируются вместе с тобой. Мотивация, советы и поддержка каждый день.",
+    title: "Личный подход",
+    desc: "Григорий и Игорь отвечают лично. Подберут программу под твой уровень, цели и расписание.",
   },
 ];
 
@@ -45,7 +46,6 @@ const programs = [
 export default function Benefits() {
   return (
     <>
-      {/* Блок преимуществ */}
       <div className="bg-neutral-50 px-6 py-20 lg:py-28">
         <div className="max-w-6xl mx-auto">
           <p className="uppercase text-xs tracking-widest text-neutral-400 mb-4">Почему FitHome</p>
@@ -55,7 +55,7 @@ export default function Benefits() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {benefits.map((b) => (
               <div key={b.title} className="flex flex-col gap-3">
-                <div className="w-10 h-10 flex items-center justify-center bg-black rounded-none">
+                <div className="w-10 h-10 flex items-center justify-center bg-black">
                   <Icon name={b.icon as "Home"} size={20} className="text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-neutral-900">{b.title}</h3>
@@ -66,16 +66,19 @@ export default function Benefits() {
         </div>
       </div>
 
-      {/* Блок программ */}
       <div className="bg-white px-6 py-20 lg:py-28">
         <div className="max-w-6xl mx-auto">
           <p className="uppercase text-xs tracking-widest text-neutral-400 mb-4">Программы</p>
           <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900 mb-12 max-w-2xl leading-tight">
             Найди тренировку под свой день
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200 mb-10">
             {programs.map((p) => (
-              <div key={p.label} className="bg-white p-8 flex flex-col gap-4 group cursor-pointer hover:bg-neutral-900 transition-colors duration-300">
+              <Link
+                to="/workouts"
+                key={p.label}
+                className="bg-white p-8 flex flex-col gap-4 group hover:bg-neutral-900 transition-colors duration-300"
+              >
                 <div className="flex items-center justify-between">
                   <span className="text-xs uppercase tracking-widest text-neutral-400 group-hover:text-neutral-500">{p.level}</span>
                   <span className="text-xs text-neutral-400 group-hover:text-neutral-500">{p.duration}</span>
@@ -84,9 +87,15 @@ export default function Benefits() {
                 <div className="mt-auto">
                   <Icon name="ArrowRight" size={18} className="text-neutral-300 group-hover:text-white transition-colors" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
+          <Link
+            to="/workouts"
+            className="inline-block border border-black text-black px-8 py-3 uppercase tracking-wide text-sm font-medium hover:bg-black hover:text-white transition-colors"
+          >
+            Все тренировки
+          </Link>
         </div>
       </div>
     </>

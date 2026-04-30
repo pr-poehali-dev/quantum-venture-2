@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <div
@@ -10,51 +12,35 @@ export default function Footer() {
             <div className="flex shrink-0 gap-8 sm:gap-12 lg:gap-20">
               <div className="flex flex-col gap-1 sm:gap-2">
                 <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm">FitHome</h3>
-                <a
-                  href="#workouts"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
+                <Link to="/workouts" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
                   Тренировки
-                </a>
-                <a
-                  href="#about"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
+                </Link>
+                <Link to="/about" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
                   О нас
-                </a>
-                <a
-                  href="#contact"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
+                </Link>
+                <Link to="/contacts" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
                   Контакты
-                </a>
+                </Link>
               </div>
               <div className="flex flex-col gap-1 sm:gap-2">
                 <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm">Программы</h3>
-                <a
-                  href="#beginner"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
+                <Link to="/workouts" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
                   Для новичков
-                </a>
-                <a
-                  href="#daily"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
+                </Link>
+                <Link to="/workouts" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
                   Ежедневные
-                </a>
-                <a
-                  href="#lifestyle"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
+                </Link>
+                <Link to="/workouts" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
                   Образ жизни
-                </a>
+                </Link>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-0">
-              <h1 className="text-[18vw] sm:text-[16vw] lg:text-[14vw] leading-[0.8] mt-4 sm:mt-6 lg:mt-10 text-white font-bold tracking-tight">
-                FITHOME
-              </h1>
+              <Link to="/">
+                <h1 className="text-[18vw] sm:text-[16vw] lg:text-[14vw] leading-[0.8] mt-4 sm:mt-6 lg:mt-10 text-white font-bold tracking-tight hover:text-neutral-400 transition-colors cursor-pointer">
+                  FITHOME
+                </h1>
+              </Link>
               <div className="text-right">
                 <p className="text-white text-sm sm:text-base">{new Date().getFullYear()} FitHome</p>
                 <p className="text-neutral-400 text-xs mt-1">Составил: Кузнецов И.Д. и Малюта Г.</p>

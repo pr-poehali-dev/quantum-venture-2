@@ -1,5 +1,6 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 export default function Promo() {
   const container = useRef<HTMLDivElement>(null);
@@ -22,6 +23,7 @@ export default function Promo() {
             alt="Энергия движения"
             className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-black/50" />
         </motion.div>
       </div>
 
@@ -29,10 +31,16 @@ export default function Promo() {
         Твоя энергия — твоё топливо
       </h3>
 
-      <p className="absolute bottom-12 right-6 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-5xl z-10">
-        Каждое движение — шаг к лучшей версии себя. Начни сегодня,
-        прямо там, где ты есть — дома, в офисе, на улице.
+      <p className="absolute bottom-24 right-6 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-3xl z-10 leading-tight">
+        Каждое движение — шаг к лучшей версии себя. Начни сегодня, прямо там, где ты есть.
       </p>
+
+      <Link
+        to="/contacts"
+        className="absolute bottom-10 right-6 z-10 bg-white text-black px-6 py-2.5 uppercase tracking-wide text-sm font-medium hover:bg-neutral-200 transition-colors"
+      >
+        Начать сейчас
+      </Link>
     </div>
   );
 }
